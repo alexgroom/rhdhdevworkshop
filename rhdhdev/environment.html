@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Developer hub environment :: Red Hat Developer Hub Developer Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/course-template/rhdhdev/environment.html">
+    <link rel="prev" href="exploring.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img
+          src="../_/img/header_logo.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" href="https://redhat-scholars.github.io/course-template">Red Hat Developer Hub Developer Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Books</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">CheatSheets</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">CheatSheet A</a>
+            <a class="navbar-item" href="#">CheatSheet B</a>
+            <a class="navbar-item" href="#">CheatSheet C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Upcoming Events</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Event A</a>
+            <a class="navbar-item" href="#">Event B</a>
+            <a class="navbar-item" href="#">Event C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Tutorial A</a>
+            <a class="navbar-item" href="#">Tutorial B</a>
+            <a class="navbar-item" href="#">Tutorial C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhdhdev" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html" class=" query-params-link">Developer Hub Workshop</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="setup.html">Getting Started with RHDH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="template.html">Running a Software Template</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="building.html">Building the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="promoting.html">Promoting the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="exploring.html">Exploring Developer Hub</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="environment.html">Setting up the Lab Environment</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Developer Hub Workshop</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Developer Hub Workshop</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Developer Hub Workshop</a></li>
+    <li><a href="environment.html">Setting up the Lab Environment</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/alexgroom/rhdhdevworkshop/edit/master/documentation/modules/ROOT/pages/environment.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Developer hub environment</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/architecture.png" alt="architecture">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup_environment"><a class="anchor" href="#_setup_environment"></a>Setup Environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This lab is based around the <strong><a href="https://catalog.demo.redhat.com/catalog?item=babylon-catalog-prod/published.rhdh-demo.prod&amp;utm_source=webapp&amp;utm_medium=share-link" class="params-link" target="_blank" rel="noopener">Developer Hub Demo</a></strong>
+available as a workshop in RHDP.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdp-rhdh-demo.png" alt="rhdp rhdh demo" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Deploy this lab and then start at the first page of these instructions.</p>
+</div>
+<div class="paragraph">
+<p>Enable multiple instances by first <strong>Enable workshop user interface</strong> and then selecting a number of users.</p>
+</div>
+<div class="paragraph">
+<p>Note that each user gets a 3 node cluster and this will take time to deploy.</p>
+</div>
+<div class="sect2">
+<h3 id="_clean_up"><a class="anchor" href="#_clean_up"></a>Clean up</h3>
+<div class="paragraph">
+<p>To cleanup a cluster back to its original state there are several tasks to perform:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete my-quarkus-app and my-quarks-app-gitops repos from GitLab</p>
+</li>
+<li>
+<p>Unregister the Catalog entry for my-quarkus-app from RHDH</p>
+</li>
+<li>
+<p>Remove the ArgoCD applications, eg bootstrap, build, and the 3 deployments for prod, pre-prod</p>
+</li>
+<li>
+<p>Remove the Quay repository for quayadmin/my-quarkus-app</p>
+</li>
+<li>
+<p>Delete all the OpenShift projects related to my-quarkus-app, dev, prod and pre-prod. This should clean all pipelines and cached images</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_run"><a class="anchor" href="#_new_run"></a>New run</h3>
+<div class="paragraph">
+<p>If the templates fails for some reason, an easy option is to repeat the template under a different project name, eg <strong>my-quarkus-app2</strong>. This
+should create a set of artefacts using this name.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="exploring.html" class="query-params-link">Exploring Developer Hub</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

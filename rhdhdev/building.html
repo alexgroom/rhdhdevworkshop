@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Building the application :: Red Hat Developer Hub Developer Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/course-template/rhdhdev/building.html">
+    <link rel="prev" href="template.html">
+    <link rel="next" href="promoting.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img
+          src="../_/img/header_logo.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" href="https://redhat-scholars.github.io/course-template">Red Hat Developer Hub Developer Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Books</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">CheatSheets</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">CheatSheet A</a>
+            <a class="navbar-item" href="#">CheatSheet B</a>
+            <a class="navbar-item" href="#">CheatSheet C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Upcoming Events</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Event A</a>
+            <a class="navbar-item" href="#">Event B</a>
+            <a class="navbar-item" href="#">Event C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Tutorial A</a>
+            <a class="navbar-item" href="#">Tutorial B</a>
+            <a class="navbar-item" href="#">Tutorial C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhdhdev" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html" class=" query-params-link">Developer Hub Workshop</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="setup.html">Getting Started with RHDH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="template.html">Running a Software Template</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="building.html">Building the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="promoting.html">Promoting the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="exploring.html">Exploring Developer Hub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="environment.html">Setting up the Lab Environment</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Developer Hub Workshop</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Developer Hub Workshop</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Developer Hub Workshop</a></li>
+    <li><a href="building.html">Building the application</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/alexgroom/rhdhdevworkshop/edit/master/documentation/modules/ROOT/pages/building.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Building the application</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is merely a feature of the chosen template, but as discussed in the last section, the pipelines we need to run are
+triggered by a webhook when we make a change in Git.</p>
+</div>
+<div class="paragraph">
+<p>We have two approaches to this, one is via Dev Spaces IDE, the other is directly via GitLab.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_viewing_the_source"><a class="anchor" href="#_viewing_the_source"></a>Viewing the Source</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lets use the OpenShift Dev Spaces IDE to view the Quarkus source. For first use there are a number of steps to join all theses systems together.
+From the <strong>Overview</strong> tab, click on the link to <strong>OpenShift Dev Spaces (VS Code)</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdh-catalog-qk-viewsource.png" alt="rhdh catalog qk viewsource" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Click through the <strong>Login with OpenShift</strong> dialog</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp-login-with.png" alt="ocp login with" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Then choose <strong>rhsso</strong> at the next screen which finally lands on a Keycloak based authentication. Here use the credentials <strong>user1</strong>
+and the password <strong>%ADMIN_PASSWORD%</strong> to login.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ocp-realm.png" alt="ocp realm" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Click through the browser authorization to access openshift-devspaces-client to <strong>Allow selected permissions</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/browser-permissions.png" alt="browser permissions" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Click <strong>Continue</strong> when asked <strong>Do you trust the authors of this repository</strong> since this allows the IDE to see your Git repo.</p>
+</div>
+<div class="paragraph">
+<p>Now authorize Dev Spaces access to your GitLab account</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-auth.png" alt="devspaces auth" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>After all of this these system checks the IDE should start loading, this could take a couple of minutes to download the IDE images.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-loading.png" alt="devspaces loading" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Finally the IDE should launch and you should be able to see your project in a VS Code like environment.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-initial.png" alt="devspaces initial" width="600">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_making_a_code_change"><a class="anchor" href="#_making_a_code_change"></a>Making a code change</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We just need to make one change and push this back to Git to trigger our pipelines. The
+easiest thing to change is to update one of the docs associated with the project.</p>
+</div>
+<div class="paragraph">
+<p>Navigate to the file <strong>docs / index.md</strong> and make a change to the text in the .md file. Note these changes since we should be able to search for
+them later using the RHDH TechDocs Search.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-edit.png" alt="devspaces edit" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Edit the file and extend the text, for example: <strong>"A cool quarkus app written by me"</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-save.png" alt="devspaces save" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Use the file menu (use that 3 line hamburger menu on the left) to Save the changes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-git.png" alt="devspaces git" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Now switch the to <strong>Git</strong> view</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-commit.png" alt="devspaces commit" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Add a comment to the commit, Click the <strong>Commit</strong> button and then <strong>Sync</strong> the changes as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces-sync.png" alt="devspaces sync" width="400">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_checking_the_pipeline"><a class="anchor" href="#_checking_the_pipeline"></a>Checking the Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now switch back to the RHDH application and check the <strong>CI</strong> tab. You should now see the pipeline. Expand it using the <strong>&gt;</strong> next to (PLR)
+to show the build stages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>git-clone - clone from Gitlab</p>
+</li>
+<li>
+<p>package - Java build</p>
+</li>
+<li>
+<p>build-and-push - build container and push to Quay</p>
+</li>
+<li>
+<p>resync - sync the deployment object so the application is now complete</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdh-ci-running.png" alt="rhdh ci running" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the pipeline completes, the <strong>Topology</strong> view should be a little healthier with one running pod (in blue)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdh-topology-dev.png" alt="rhdh topology dev" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>If you <strong>click</strong> on the Route arrow in the Topology view this will launch a link to the running application. This is the basic Quarkus test
+app so you should see this launch page in the browser:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/qk-launch.png" alt="qk launch" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p>We have successfully used the template to create a whole project from source to running application. Lets refine that in the next section.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="template.html" class="query-params-link">Running a Software Template</a></span>
+  <span class="next"><a href="promoting.html" class="query-params-link">Promoting the application</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
