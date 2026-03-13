@@ -1,0 +1,147 @@
+= Getting Started
+include::_attributes.adoc[]
+
+[#access]
+== Access to the workshop
+When the workshop starts you should be presented with a url for the OpenShift console access and a password. 
+Those values need to be entered below so the lab guide can tailor your experience to the deployed cluster.
+
+The lab values can be provided either via the launch URL or must be manually copied into the lab guide - see below.
+
+All these values need to be successfully set for the lab guide to personalise correctly for your environment. 
+
+=== Lab Introduction Page
+Please use the lab introduction page to fill in any missing information:
+
+image::rhdp-starter-screen.png[RHPD Starter screen]
+
+=== Required Lab Values
+
+
+* OpenShift Console: *%MASTER_URL%*
+* Console password: *%ADMIN_PASSWORD%*
+
+++++
+<div>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const kPass = urlParams.get('ADMIN_PASSWORD');
+      const subDomain = urlParams.get('ROUTE_SUBDOMAIN');
+      const masterUrl = urlParams.get('MASTER_URL');
+      if (kPass && subDomain && masterUrl ) {
+        showValues( kPass, masterUrl );
+      }
+      else {
+        showValuesForm( kPass, masterUrl );
+      }
+    } );
+
+
+    function showValues( kPass, masterUrl ) {
+      document.getElementById('foobar-form-empty').style.display = "none";
+      document.getElementById('foobar-form-filled').style.display = "flex";
+      document.getElementById('kPass').value = kPass;
+      document.getElementById('masterUrl').value = masterUrl;
+ 
+    }
+
+    function showValuesForm(  kPass, masterUrl ) {
+      document.getElementById('foobar-form-empty').style.display = "flex";
+      document.getElementById('foobar-form-filled').style.display = "none";
+      document.getElementById('kPass').value = kPass;
+      document.getElementById('masterUrl').value = masterUrl;
+    }
+
+    function getSubdomain(masterUrl)
+    {
+        pos = masterUrl.indexOf(".apps.");
+        if (pos == -1)
+        {
+            return masterUrl;
+        }
+        else
+        {
+            // delivers a URL fragment of the form apps.xxx.yyy.com
+            return masterUrl.substring(pos+1);
+        }
+    }
+
+    function checkURL(url)
+    {
+      //chance to parse the url and check all elements are there using JavaScript
+      return url.trim();
+    }
+
+    function goWithValues() {
+      kPass = document.getElementById('kPass').value.trim();
+      masterUrl = checkURL(document.getElementById('masterUrl').value);
+      if (masterUrl != "")
+      {
+        subDomain = getSubdomain(masterUrl);
+      }
+
+      window.location.search = ('&ADMIN_PASSWORD=' + kPass + '&ROUTE_SUBDOMAIN=' + 
+          subDomain + '&MASTER_URL=' + masterUrl);
+      
+    }
+
+  </script>
+
+    <div id="topbar-foo" class="foobar-menu">
+      <div class="foobar-item" id="foobar-form-empty">
+        <div><span class="foobar-text" style="margin-left: 1rem;"><h2>Set Lab Values</h2></span><br>
+        <span>
+        <form action="javascript:void(0);" onsubmit="goWithValues();">
+          OpenShift Console:<input size="50" id="masterUrl" type="text" placeholder="OpenShift Console URL" style="margin-left: 10px"><br>
+          Console Password:<input size="30" id="kPass" type="text" placeholder="Password" style="margin-left: 10px"><br><br>
+          <input type="button" onclick="goWithValues()" value="Set Values" style="color: white; background: black; padding-top: 10px; padding-bottom: 10px; padding-right:20px; padding-left: 20px">      
+        </form>
+        </span>
+        </div>
+      </div>
+
+      <div class="foobar-item" id="foobar-form-filled" style="display: none;">
+      </div>
+
+    </div>
+</div>
+++++
+
+
+[#architecture]
+== Workshop Architecture
+The diagram shows all the components that have integrated with Developer Hub for this lab. Everything today is running in an OpenShift cluster.
+We have integrated Keycloak for authentication, GitLab as the Git repo, we use ArgoCD to orchestrate using GitOps from Git into the cluster. We use Tekton 
+pipelines to build applications and webhooks to notify the pipelines when Git changes. Finally we use Dev Spaces as the code IDE to view and change the source code.
+
+
+image::architecture.png[arch,700]
+
+[#login]
+== Login to Developer Hub
+Login in to Developer Hub using this link: *link:https://backstage-backstage.%ROUTE_SUBDOMAIN%[Developer Hub^, role='params-link']* 
+
+We have configured KeyCloak to use GitLab as our identity provider. 
+
+You will be redirected to a **KeyCloak** page for authentication.  
+
+image::backstage-auth.png[login, 500]
+
+Click on the **GitLab** button at the *bottom* of the login screen. 
+You will now be redirected to the **GitLab** login page.  
+
+image::gitlab-auth.png[gitlab, 500]
+
+Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login.
+
+Click Authorize to join Keycloak and GitLab.
+
+image::auth-keycloak.png[keycloak, 500]
+
+*KeyCloak* will redirect to the Developer Hub (RHDH) home screen. 
+
+image::rhdh-front-page.png[rhdh, 800]
+
+On first use Developer Hub initially displays with a *Quick start* side panel to the right of the screen, you can hide this using the *Hide* 
+link in the bottom right of the display, this should allow you to see more information. You can toggle this back using the (?) help button.

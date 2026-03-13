@@ -1,7 +1,6 @@
-* xref:01-setup.adoc[1. Setup]
-** xref:01-setup.adoc#prerequisite[Prerequisites]
-** xref:01-setup.adoc#minikube[Setup Minikube]
-
-* xref:02-deploy.adoc[2. Deploy Service]
-** xref:02-deploy.adoc#package[Build Service]
-** xref:02-deploy.adoc#deploy[Deploy Dervice]
+* xref:setup.adoc[Getting Started with RHDH]
+* xref:template.adoc[Running a Software Template]
+* xref:building.adoc[Building the application]
+* xref:promoting.adoc[Promoting the application]
+* xref:exploring.adoc[Exploring Developer Hub]
+* xref:environment.adoc[Setting up the Lab Environment]

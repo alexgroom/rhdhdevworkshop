@@ -1,20 +1,21 @@
-= Welcome to Template Tutorial
+= Welcome to the Developer Hub Workshop
 :page-layout: home
 :!sectids:
 
 [.text-center.strong]
-== Publish Services to Kubernetes
+== Welcome to the Red Hat Developer Hub (RHDH) workshop
 
-A Kubernetes tutorial to show how you can deploy a Java service to a Kubernetes cluster as it was a child game.
+image::https://www.redhat.com/rhdc/managed-files/RH-Application_Development-Illustration-Gray%201.svg[,400]
 
-[.tiles.browse]
-== Browse modules
+Join our Red Hat Developer Hub Hands-on lab to explore the challenges currently faced by developers and the need for an Internal Developer Platform.
+Learn why this is necessary for rapid innovation.
 
-[.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+Red Hat Developer Hub streamlines development through an open platform (based on Backstage) that reduces cognitive load and frustration for developers. 
+It provides pre-architected and supported approaches that show how to get your applications into production faster and more securely—without 
+sacrificing code quality.
 
-[.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+This lab is tailored for Developers, allowing them to experience a flow through the Developer Hub. This covers onboarding, creating a new project
+via a software template, running the created pipelines to build and deploy an application, then promote that application to production.
+
+This is a hands-on lab so please bring your laptop to access the workshop systems.
+

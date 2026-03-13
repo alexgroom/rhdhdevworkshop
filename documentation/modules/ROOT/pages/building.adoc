@@ -1,0 +1,89 @@
+= Building the application
+include::_attributes.adoc[]
+
+This is merely a feature of the chosen template, but as discussed in the last section, the pipelines we need to run are
+triggered by a webhook when we make a change in Git.
+
+We have two approaches to this, one is via Dev Spaces IDE, the other is directly via GitLab.
+
+== Viewing the Source
+
+Lets use the OpenShift Dev Spaces IDE to view the Quarkus source. For first use there are a number of steps to join all theses systems together.
+From the *Overview* tab, click on the link to *OpenShift Dev Spaces (VS Code)*
+
+image::rhdh-catalog-qk-viewsource.png[,600]
+
+Click through the *Login with OpenShift* dialog
+
+image::ocp-login-with.png[,400]
+
+Then choose *rhsso* at the next screen which finally lands on a Keycloak based authentication. Here use the credentials *user1* 
+and the password *%ADMIN_PASSWORD%* to login.
+
+image::ocp-realm.png[,400]
+
+Click through the browser authorization to access openshift-devspaces-client to *Allow selected permissions*
+
+image::browser-permissions.png[,400]
+
+Click *Continue* when asked *Do you trust the authors of this repository* since this allows the IDE to see your Git repo.
+
+Now authorize Dev Spaces access to your GitLab account
+
+image::devspaces-auth.png[,400]
+
+After all of this these system checks the IDE should start loading, this could take a couple of minutes to download the IDE images.
+
+image::devspaces-loading.png[,600]
+
+Finally the IDE should launch and you should be able to see your project in a VS Code like environment.
+
+image::devspaces-initial.png[,600]
+
+== Making a code change
+We just need to make one change and push this back to Git to trigger our pipelines. The
+easiest thing to change is to update one of the docs associated with the project.
+
+Navigate to the file *docs / index.md* and make a change to the text in the .md file. Note these changes since we should be able to search for
+them later using the RHDH TechDocs Search.
+
+image::devspaces-edit.png[,600]
+
+Edit the file and extend the text, for example: *"A cool quarkus app written by me"*
+
+image::devspaces-save.png[,400]
+
+Use the file menu (use that 3 line hamburger menu on the left) to Save the changes.
+
+image::devspaces-git.png[,400]
+
+Now switch the to *Git* view
+
+image::devspaces-commit.png[,400]
+
+Add a comment to the commit, Click the *Commit* button and then *Sync* the changes as shown below.
+
+image::devspaces-sync.png[,400]
+
+== Checking the Pipeline
+
+Now switch back to the RHDH application and check the *CI* tab. You should now see the pipeline. Expand it using the *>* next to (PLR) 
+to show the build stages:
+
+* git-clone - clone from Gitlab
+* package - Java build
+* build-and-push - build container and push to Quay
+* resync - sync the deployment object so the application is now complete
+
+image::rhdh-ci-running.png[,600]
+
+Once the pipeline completes, the *Topology* view should be a little healthier with one running pod (in blue)
+
+image::rhdh-topology-dev.png[,400]
+
+If you *click* on the Route arrow in the Topology view this will launch a link to the running application. This is the basic Quarkus test 
+app so you should see this launch page in the browser:
+
+image::qk-launch.png[,700]
+
+We have successfully used the template to create a whole project from source to running application. Lets refine that in the next section.

@@ -1,0 +1,29 @@
+= Developer hub environment
+
+image::architecture.png[]
+
+This lab is based around the *link:https://catalog.demo.redhat.com/catalog?item=babylon-catalog-prod/published.rhdh-demo.prod&utm_source=webapp&utm_medium=share-link[Developer Hub Demo^, role='params-link']* 
+available as a workshop in RHDP. 
+
+image::rhdp-rhdh-demo.png[,800]
+
+Deploy this lab and then start at the first page of these instructions.
+
+Enable multiple instances by first *Enable workshop user interface* and then selecting a number of users.
+
+Note that each user gets a 3 node cluster and this will take time to deploy.
+
+=== Clean up
+
+To cleanup a cluster back to its original state there are several tasks to perform:
+
+* Delete my-quarkus-app and my-quarks-app-gitops repos from GitLab
+* Unregister the Catalog entry for my-quarkus-app from RHDH
+* Remove the ArgoCD applications, eg bootstrap, build, and the 3 deployments for prod, pre-prod
+* Remove the Quay repository for quayadmin/my-quarkus-app
+* Delete all the OpenShift projects related to my-quarkus-app, dev, prod and pre-prod. This should clean all pipelines and cached images
+
+=== New run
+
+If the templates fails for some reason, an easy option is to repeat the template under a different project name, eg *my-quarkus-app2*. This
+should create a set of artefacts using this name.

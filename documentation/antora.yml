@@ -1,5 +1,5 @@
-name: template-tutorial
-title: Template Tutorial
+name: rhdhdev
+title: Developer Hub Workshop
 version: master
 nav:
   - modules/ROOT/nav.adoc
