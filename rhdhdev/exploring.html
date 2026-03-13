@@ -164,7 +164,7 @@ However, the likelihood is that your login to RHDH will provide SSO cookies to a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/gitlab-templates.png" alt="git" width="700">
+<img src="_images/gitlab-firstscreen.png" alt="gitlab firstscreen" width="600">
 </div>
 </div>
 <div class="paragraph">
@@ -186,8 +186,61 @@ to invest time in this type of template to reduce user errors and support and ma
 </div>
 </div>
 <div class="sect2">
-<h3 id="_viewing_the_source_code_skeleton"><a class="anchor" href="#_viewing_the_source_code_skeleton"></a>Viewing the Source code Skeleton</h3>
-
+<h3 id="_viewing_the_source_code"><a class="anchor" href="#_viewing_the_source_code"></a>Viewing the Source Code</h3>
+<div class="paragraph">
+<p>For the application promotion step we landed on the quarkus-app code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gitlab-firstscreen.png" alt="gitlab firstscreen" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>You can see the two new repos created from the template that apply to the quarkus application build. Navigate into the <strong>my-quarkus-app</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This hierarchy should match what you saw in the Dev Spaces IDE. In fact if you follow the folder tree into <strong>docs</strong> you should find the
+change you made to the <strong>index.md</strong> file.</p>
+</div>
+<div class="paragraph">
+<p>Return back to the top of the <strong>my-quarkus-app</strong> repo and this time select <strong>src</strong>. Descend down to
+<strong>src / main / java / org.redhat.janus</strong></p>
+</div>
+<div class="paragraph">
+<p>and then view the file <strong>ExampleResource.java</strong></p>
+</div>
+<div class="paragraph">
+<p>Notice how the package name has been set to match the values entered in the template. However this was one of the defaults.
+One of the features of the templating process is the ability to align the packages according to your needs. This is achieved through
+a code skeleton.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_viewing_the_code_skeleton"><a class="anchor" href="#_viewing_the_code_skeleton"></a>Viewing the Code Skeleton</h3>
+<div class="paragraph">
+<p>The source code is generated for the <strong>my-quarkus-app</strong> by processing a skeleton code tree that exists here in the template library:</p>
+</div>
+<div class="paragraph">
+<p>Navigate to:</p>
+</div>
+<div class="paragraph">
+<p><strong>developer-hub-software-templates / scaffolder-templates / quarkus-web-template / skeleton / src / main</strong></p>
+</div>
+<div class="paragraph">
+<p>This is where the source code package is generated. Note how the package name is parameterized in the folder name ie <strong>${{values.java_package_name}}</strong></p>
+</div>
+<div class="paragraph">
+<p>Step into this folder to find the file <strong>ExampleResource.java</strong> again, if you look at that file, it also has the package parameterized.</p>
+</div>
+<div class="paragraph">
+<p>This means as part of the software template execution we can perform a number of scripted transformations on the code based on
+the template input.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gitlab-qk-skeleton.png" alt="gitlab qk skeleton" width="600">
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -205,6 +258,18 @@ can also login into the ArgCD application running on OpenShift to see the full s
 </div>
 <div class="paragraph">
 <p>Use the credentials <strong>admin</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/argo-main.png" alt="argo main" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Logging into ArgoCD reveals the familiar Applications layout. All of these components have been created by the template,
+and placed in the <strong>my-quarkus-app-gitops</strong> folder to drive the creation of the pipelines and to manage the application deployment.</p>
+</div>
+<div class="paragraph">
+<p>This really only confirms what we knew from the RHDH <strong>CD</strong> tab, however, as an <strong>admin</strong> here you have more visibility, and scope to break things so <strong>beware</strong></p>
 </div>
 </div>
 </div>
@@ -225,15 +290,91 @@ software template such as project, pipelines and deployed applications.</p>
 <p>Use the credentials <strong>user1</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.
 Sometimes the SSO credentials you have for GitLab will login you in by default as <strong>user1</strong> which is a non-privileged user.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_login_to_quay"><a class="anchor" href="#_login_to_quay"></a>Login to Quay</h3>
 <div class="paragraph">
-<p>Login in to ArgoCD using this link: <strong><a href="https://argocd-server-janus-argocd.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">ArgoCD</a></strong></p>
+<p>The OpenShift web console allows you to explore the deployment, pipelines and runtime environment with more visibility than
+the RHDH <strong>Topology</strong> tab which is configured to be quite selective on how it represents the kubernetes environment.</p>
 </div>
 <div class="paragraph">
-<p>Use the credentials <strong>admin</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.</p>
+<p>From OpenShift you can see all your individual projects and the pods running in them for a behind the scenes view.</p>
 </div>
+<div class="paragraph">
+<p>For example if you navigate to the <strong>my-quarkus-app-dev</strong> Project and then from the side bar menu selected <strong>Workloads | Topology</strong> you
+will see 3 things running in the project.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The quarkus-template pod as expected</p>
+</li>
+<li>
+<p>An event listener which is triggered by the GitLab webhooks</p>
+</li>
+<li>
+<p>A Job used to help setup the project</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Also note that each running pod has its own project for <strong>dev</strong>, <strong>prod</strong> and <strong>pre-pod</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_viewing_the_rhdh_techdocs"><a class="anchor" href="#_viewing_the_rhdh_techdocs"></a>Viewing the RHDH TechDocs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The TechDocs feature of RHDH scans all of the available components in the Catalog and indexes them for easy search. Now in this example
+the Catalog is very small, but you should still be able to search for some of the documentation fields.</p>
+</div>
+<div class="paragraph">
+<p>In addition, you can use the <strong>Docs</strong> tab in the Catalog for the <strong>my-quarkus-app</strong> to see the specific docs for that app. Here you should be able to see
+the code change you made earlier to <strong>index.md</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdh-techdocs.png" alt="rhdh techdocs" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_viewing_the_rhdh_techradar"><a class="anchor" href="#_viewing_the_rhdh_techradar"></a>Viewing the RHDH TechRadar</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The TechRadar view allows the owner of the RHDH instance to recommend development technologies to all their users.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdh-techradar.png" alt="rhdh techradar" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_viewing_the_rhdh_learning_paths"><a class="anchor" href="#_viewing_the_rhdh_learning_paths"></a>Viewing the RHDH Learning paths</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Learning Path section can be disabled, but in our example we use it to link to a selection of Red Hat Developer articles and
+learning activities on the Red Hat web site.</p>
+</div>
+<div class="paragraph">
+<p>These tiles can be configured locally to suggest static learning links for your developers to follow.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhdh-learning.png" alt="rhdh learning" width="800">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wrap_up"><a class="anchor" href="#_wrap_up"></a>Wrap Up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As you can see Developer Hub is a great place to bring all things together for your developers so that they have observability over
+their systems, can collaborate through the Git based Catalog. They can quickly onboard with software templates or make self-service
+requests for infrastructure.</p>
 </div>
 </div>
 </div>
