@@ -58,7 +58,7 @@ any Git *Issues* or *Merges*, we can view the pipelines status under *CI* and *C
 image::rhdh-catalog-qk-tour.png[,700]
 
 From the same view, note that the *Owner* of this is you *user1* and we have direct access to the source code either via GitLab using *View Source* or 
-via our *OpenShift Dev Spaces VS Code IDE*. The large panel on the right shows the ArgoCD activity for this project which has been setting up
+via our *OpenShift Dev Spaces (VS Code) IDE*. The large panel on the right shows the ArgoCD activity for this project which has been setting up
 pipelines and deployments.
 
 === But its not working yet!

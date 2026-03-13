@@ -1,7 +1,5 @@
 = Developer hub environment
 
-image::architecture.png[]
-
 == Setup Environment
 
 This lab is based around the *link:https://catalog.demo.redhat.com/catalog?item=babylon-catalog-prod/published.rhdh-demo.prod&utm_source=webapp&utm_medium=share-link[Developer Hub Demo^, role='params-link']* 
