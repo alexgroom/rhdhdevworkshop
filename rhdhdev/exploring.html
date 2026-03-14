@@ -180,6 +180,40 @@ change you made to the <strong>index.md</strong> file.</p>
 It uses the information inside the file to determine how the the RHDH UI behaves. Look particularly at the annotations. There is typically
 one for each tab that gets displayed eg. <strong>Topology, CI, CD, Image Registry</strong> etc.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "my-quarkus-app"
+  description: "A cool quarkus app"
+  annotations:
+    argocd/app-name: my-quarkus-app-dev
+    backstage.io/kubernetes-id: my-quarkus-app-dev
+    backstage.io/kubernetes-namespace: my-quarkus-app-dev
+    janus-idp.io/tekton: my-quarkus-app
+    backstage.io/source-location: url:https://github.com/rhdh/my-quarkus-app
+    backstage.io/techdocs-ref: url:https://github.com/hdh/my-quarkus-app
+    gitlab.com/project-slug: rhdh/my-quarkus-app
+    quay.io/repository-slug: "rhdh/my-quarkus-app"
+  tags:
+    - java
+    - quarkus
+  links:
+    - url: https://devspaces.apps.cluster-2tgsr.dynamic.redhatworkshops.io/#https://github.com/rhdh/my-quarkus-app
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+    - url: https://devspaces.apps.cluster-2tgsr.dynamic.redhatworkshops.io/#https://github.com/rhdh/my-quarkus-app?che-editor=che-incubator/che-idea/latest
+      title: OpenShift Dev Spaces (JetBrains IntelliJ)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user1"
+  providesApis:
+    - "my-quarkus-app"</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>In our case the <strong>catalog-info.yaml</strong> has been created by the template, but it is part of the project source so can be modified by the developer
 to enable features of the RHDH for this project.</p>
