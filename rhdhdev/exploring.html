@@ -143,6 +143,51 @@ populated your Catalog a little, there are now other things to explore.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_how_does_the_rhdh_catalog_work"><a class="anchor" href="#_how_does_the_rhdh_catalog_work"></a>How does the RHDH Catalog work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To understand how the Catalog sees components and has awareness of its capabilities we have to look at the soure code project that the template created.</p>
+</div>
+<div class="sect2">
+<h3 id="_login_to_gitlab"><a class="anchor" href="#_login_to_gitlab"></a>Login to GitLab</h3>
+<div class="paragraph">
+<p>Login in to GitLab using this link: <strong><a href="https://gitlab-gitlab.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">GitLab</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Use the credentials <strong>user1</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.
+However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_viewing_the_catalog_info_file"><a class="anchor" href="#_viewing_the_catalog_info_file"></a>Viewing the Catalog Info file</h3>
+<div class="paragraph">
+<p>Earlier, for the application promotion step we landed on the quarkus-app code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gitlab-firstscreen.png" alt="gitlab firstscreen" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>You can see the two new repos created from the template that apply to the quarkus application build. Navigate into the <strong>my-quarkus-app</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This hierarchy should match what you saw in the Dev Spaces IDE. In fact if you follow the folder tree into <strong>docs</strong> you should find the
+change you made to the <strong>index.md</strong> file.</p>
+</div>
+<div class="paragraph">
+<p>At the top level you should find a file <strong>catalog-info.yaml</strong>. The existence of this file indicates the Catalog is allowed to see this repo.
+It uses the information inside the file to determine how the the RHDH UI behaves. Look particularly at the annotations. There is typically
+one for each tab that gets displayed eg. <strong>Topology, CI, CD, Image Registry</strong> etc.</p>
+</div>
+<div class="paragraph">
+<p>In our case the <strong>catalog-info.yaml</strong> has been created by the template, but it is part of the project source so can be modified by the developer
+to enable features of the RHDH for this project.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_viewing_the_software_template"><a class="anchor" href="#_viewing_the_software_template"></a>Viewing the Software Template</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -151,7 +196,7 @@ The core of that workflow is the software template (or Gold path) file which we 
 with RHDH as a <strong>Template</strong> so that it appears in the Catalog correctly and can be executed.</p>
 </div>
 <div class="sect2">
-<h3 id="_login_to_gitlab"><a class="anchor" href="#_login_to_gitlab"></a>Login to GitLab</h3>
+<h3 id="_login_to_gitlab_2"><a class="anchor" href="#_login_to_gitlab_2"></a>Login to GitLab</h3>
 <div class="paragraph">
 <p>Login in to GitLab using this link: <strong><a href="https://gitlab-gitlab.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">GitLab</a></strong></p>
 </div>
@@ -187,9 +232,6 @@ to invest time in this type of template to reduce user errors and support and ma
 </div>
 <div class="sect2">
 <h3 id="_viewing_the_source_code"><a class="anchor" href="#_viewing_the_source_code"></a>Viewing the Source Code</h3>
-<div class="paragraph">
-<p>For the application promotion step we landed on the quarkus-app code.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/gitlab-firstscreen.png" alt="gitlab firstscreen" width="600">
@@ -199,12 +241,7 @@ to invest time in this type of template to reduce user errors and support and ma
 <p>You can see the two new repos created from the template that apply to the quarkus application build. Navigate into the <strong>my-quarkus-app</strong>.</p>
 </div>
 <div class="paragraph">
-<p>This hierarchy should match what you saw in the Dev Spaces IDE. In fact if you follow the folder tree into <strong>docs</strong> you should find the
-change you made to the <strong>index.md</strong> file.</p>
-</div>
-<div class="paragraph">
-<p>Return back to the top of the <strong>my-quarkus-app</strong> repo and this time select <strong>src</strong>. Descend down to
-<strong>src / main / java / org.redhat.janus</strong></p>
+<p>Descend down to <strong>src / main / java / org.redhat.janus</strong></p>
 </div>
 <div class="paragraph">
 <p>and then view the file <strong>ExampleResource.java</strong></p>

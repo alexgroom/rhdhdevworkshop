@@ -148,6 +148,27 @@ available as a workshop in RHDP.</p>
 <div class="paragraph">
 <p>Note that each user gets a 3 node cluster and this will take time to deploy.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_problems"><a class="anchor" href="#_problems"></a>Problems</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_check_you_users_environment"><a class="anchor" href="#_check_you_users_environment"></a>Check you users' environment</h3>
+<div class="paragraph">
+<p>Before running this lab it is worth checking that the end users (both at home and office based) can access our web based servers
+using Secure Web Sockets. This is needed for Dev Spaces and the OpenShift Web console. We see problems with locked down laptops
+that route all network traffic through a VPN or web proxy.</p>
+</div>
+<div class="paragraph">
+<p>Use this test URL and make sure are checks are green on all end user systems (in all possible locations) before proceeding
+This test is not completely conclusive, but if it fails you have a problem: <strong><a href="https://websocketstest.com" class="params-link" target="_blank" rel="noopener">Secure Web Socket Test</a></strong></p>
+</div>
+<div class="paragraph">
+<p>A common mitigation to this problem is to ask users to use their own personal equipment, or their kids or their spouse&#8217;s etc. Rarely have we managed
+to get a network team to fix the corporate VPN, Proxy, Firewall etc. for a lab.</p>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_clean_up"><a class="anchor" href="#_clean_up"></a>Clean up</h3>
 <div class="paragraph">
@@ -174,7 +195,7 @@ available as a workshop in RHDP.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_run"><a class="anchor" href="#_new_run"></a>New run</h3>
+<h3 id="_new_template_run"><a class="anchor" href="#_new_template_run"></a>New template run</h3>
 <div class="paragraph">
 <p>If the templates fails for some reason, an easy option is to repeat the template under a different project name, eg <strong>my-quarkus-app2</strong>. This
 should create a set of artefacts using this name.</p>
