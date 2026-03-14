@@ -8,6 +8,35 @@ populated your Catalog a little, there are now other things to explore.
 
 image::architecture.png[]
 
+== How does the RHDH Catalog work
+To understand how the Catalog sees components and has awareness of its capabilities we have to look at the soure code project that the template created.
+
+=== Login to GitLab
+
+Login in to GitLab using this link: *link:https://gitlab-gitlab.%ROUTE_SUBDOMAIN%[GitLab^, role='params-link']* 
+
+Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login. 
+However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.
+
+=== Viewing the Catalog Info file
+
+Earlier, for the application promotion step we landed on the quarkus-app code.
+
+image::gitlab-firstscreen.png[,600]
+
+You can see the two new repos created from the template that apply to the quarkus application build. Navigate into the *my-quarkus-app*.
+
+This hierarchy should match what you saw in the Dev Spaces IDE. In fact if you follow the folder tree into *docs* you should find the
+change you made to the *index.md* file.
+
+At the top level you should find a file *catalog-info.yaml*. The existence of this file indicates the Catalog is allowed to see this repo.
+It uses the information inside the file to determine how the the RHDH UI behaves. Look particularly at the annotations. There is typically
+one for each tab that gets displayed eg. *Topology, CI, CD, Image Registry* etc. 
+
+In our case the *catalog-info.yaml* has been created by the template, but it is part of the project source so can be modified by the developer 
+to enable features of the RHDH for this project.
+
+
 == Viewing the Software Template
 To understand how the template flow just executed works its instructive to look at the components that make it happen.
 The core of that workflow is the software template (or Gold path) file which we will find in Git. This file has been registered 
@@ -39,17 +68,11 @@ to invest time in this type of template to reduce user errors and support and ma
 
 === Viewing the Source Code
 
-For the application promotion step we landed on the quarkus-app code.
-
 image::gitlab-firstscreen.png[,600]
 
 You can see the two new repos created from the template that apply to the quarkus application build. Navigate into the *my-quarkus-app*.
 
-This hierarchy should match what you saw in the Dev Spaces IDE. In fact if you follow the folder tree into *docs* you should find the
-change you made to the *index.md* file.
-
-Return back to the top of the *my-quarkus-app* repo and this time select *src*. Descend down to
-*src / main / java / org.redhat.janus*
+Descend down to *src / main / java / org.redhat.janus*
 
 and then view the file *ExampleResource.java*
 
