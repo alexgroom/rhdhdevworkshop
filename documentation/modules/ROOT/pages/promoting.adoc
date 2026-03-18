@@ -19,9 +19,19 @@ that promotes the image.
 === Login to GitLab
 
 Login in to GitLab using this link: *link:https://gitlab-gitlab.%ROUTE_SUBDOMAIN%[GitLab^, role='params-link']* 
+It is likely that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.
 
-Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login. 
-However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.
+If not, use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+user1
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
+
 
 image::gitlab-firstscreen.png[,600]
 

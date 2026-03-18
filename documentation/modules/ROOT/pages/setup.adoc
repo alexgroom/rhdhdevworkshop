@@ -3,20 +3,22 @@ include::_attributes.adoc[]
 
 [#access]
 == Access to the workshop
-When the workshop starts you should be presented with a url for the OpenShift console access and a password. 
+When the workshop starts you should be presented with some details to access the workshop. 
 Those values need to be entered below so the lab guide can tailor your experience to the deployed cluster.
 
-The lab values can be provided either via the launch URL or must be manually copied into the lab guide - see below.
-
-All these values need to be successfully set for the lab guide to personalise correctly for your environment. 
-
 === Lab Introduction Page
-Please use the lab introduction page to fill in any missing information:
+Please use the lab introduction page to fill in any missing information, you need to find the *OpenShift 
+console URL* and associated *password* as show below, but it depends on how the workshop was launched:
 
 image::rhdp-starter-screen.png[RHPD Starter screen]
 
+Or maybe:
+
+image::rhdp-start-screen-ocpcred.png[RHPD Starter screen]
+
 === Required Lab Values
 
+Check below to see what values have been set:
 
 * OpenShift Console: *%MASTER_URL%*
 * Console password: *%ADMIN_PASSWORD%*
@@ -90,7 +92,7 @@ image::rhdp-starter-screen.png[RHPD Starter screen]
 
     <div id="topbar-foo" class="foobar-menu">
       <div class="foobar-item" id="foobar-form-empty">
-        <div><span class="foobar-text" style="margin-left: 1rem;"><h2>Set Lab Values</h2></span><br>
+        <div><span class="foobar-text" style="margin-left: 1rem;"><h2>Set lab values</h2></span><br>
         <span>
         <form action="javascript:void(0);" onsubmit="goWithValues();">
           OpenShift Console:<input size="50" id="masterUrl" type="text" placeholder="OpenShift Console URL" style="margin-left: 10px"><br>
@@ -133,13 +135,22 @@ You will now be redirected to the **GitLab** login page.
 
 image::gitlab-auth.png[gitlab, 500]
 
-Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login.
+Use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+user1
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
 
-Click Authorize to join Keycloak and GitLab.
+Click *Authorize* to join Keycloak and GitLab.
 
 image::auth-keycloak.png[keycloak, 500]
 
-*KeyCloak* will redirect to the Developer Hub (RHDH) home screen. 
+Now *KeyCloak* will redirect to the Developer Hub (RHDH) home screen. 
 
 image::rhdh-front-page.png[rhdh, 800]
 

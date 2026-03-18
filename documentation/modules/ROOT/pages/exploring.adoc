@@ -14,9 +14,18 @@ To understand how the Catalog sees components and has awareness of its capabilit
 === Login to GitLab
 
 Login in to GitLab using this link: *link:https://gitlab-gitlab.%ROUTE_SUBDOMAIN%[GitLab^, role='params-link']* 
+It is likely that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.
 
-Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login. 
-However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.
+If not, use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+user1
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
 
 === Viewing the Catalog Info file
 
@@ -80,9 +89,18 @@ with RHDH as a *Template* so that it appears in the Catalog correctly and can be
 === Login to GitLab
 
 Login in to GitLab using this link: *link:https://gitlab-gitlab.%ROUTE_SUBDOMAIN%[GitLab^, role='params-link']* 
+It is likely that your previous login will provide SSO cookies to access GitLab without re-authenticating.
 
-Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login. 
-However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.
+If not, use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+user1
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
 
 On the **GitLab** home screen, you will be presented with the two template projects that are provisioned in this lab.  
 
@@ -141,7 +159,17 @@ can also login into the ArgCD application running on OpenShift to see the full s
 
 Login in to ArgoCD using this link: *link:https://argocd-server-janus-argocd.%ROUTE_SUBDOMAIN%[ArgoCD^, role='params-link']* 
 
-Use the credentials *admin* and the password *%ADMIN_PASSWORD%* to login.
+Use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+admin
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
+
 
 image::argo-main.png[,600]
 
@@ -157,7 +185,17 @@ software template such as project, pipelines and deployed applications.
 === Login to OpenShift Console
 Login in to Developer Hub using this link: *link:https://console-openshift-console.%ROUTE_SUBDOMAIN%[OpenShift Console^, role='params-link']* 
 
-Use the credentials *user1* and the password *%ADMIN_PASSWORD%* to login.
+Use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+user1
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
+
 Sometimes the SSO credentials you have for GitLab will login you in by default as *user1* which is a non-privileged user.
 
 The OpenShift web console allows you to explore the deployment, pipelines and runtime environment with more visibility than

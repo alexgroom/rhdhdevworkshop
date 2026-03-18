@@ -17,8 +17,18 @@ Click through the *Login with OpenShift* dialog
 
 image::ocp-login-with.png[,400]
 
-Then choose *rhsso* at the next screen which finally lands on a Keycloak based authentication. Here use the credentials *user1* 
-and the password *%ADMIN_PASSWORD%* to login.
+Then choose *rhsso* at the next screen which finally lands on a Keycloak based authentication. 
+Use the credentials to login:
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+user1
+----
+and the password: 
+[source,shell,subs="{markup-in-source}",role=copypaste]
+----
+%ADMIN_PASSWORD%
+----
+
 
 image::ocp-realm.png[,400]
 
