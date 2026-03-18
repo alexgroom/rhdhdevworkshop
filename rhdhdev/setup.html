@@ -132,28 +132,34 @@
 <h2 id="access"><a class="anchor" href="#access"></a>Access to the workshop</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When the workshop starts you should be presented with a url for the OpenShift console access and a password.
+<p>When the workshop starts you should be presented with some details to access the workshop.
 Those values need to be entered below so the lab guide can tailor your experience to the deployed cluster.</p>
-</div>
-<div class="paragraph">
-<p>The lab values can be provided either via the launch URL or must be manually copied into the lab guide - see below.</p>
-</div>
-<div class="paragraph">
-<p>All these values need to be successfully set for the lab guide to personalise correctly for your environment.</p>
 </div>
 <div class="sect2">
 <h3 id="_lab_introduction_page"><a class="anchor" href="#_lab_introduction_page"></a>Lab Introduction Page</h3>
 <div class="paragraph">
-<p>Please use the lab introduction page to fill in any missing information:</p>
+<p>Please use the lab introduction page to fill in any missing information, you need to find the <strong>OpenShift
+console URL</strong> and associated <strong>password</strong> as show below, but it depends on how the workshop was launched:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/rhdp-starter-screen.png" alt="RHPD Starter screen">
 </div>
 </div>
+<div class="paragraph">
+<p>Or maybe:</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="rhdp-start-screen-ocpcred.png" alt="RHPD Starter screen">
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_required_lab_values"><a class="anchor" href="#_required_lab_values"></a>Required Lab Values</h3>
+<div class="paragraph">
+<p>Check below to see what values have been set:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -232,7 +238,7 @@ Those values need to be entered below so the lab guide can tailor your experienc
 
     <div id="topbar-foo" class="foobar-menu">
       <div class="foobar-item" id="foobar-form-empty">
-        <div><span class="foobar-text" style="margin-left: 1rem;"><h2>Set Lab Values</h2></span><br>
+        <div><span class="foobar-text" style="margin-left: 1rem;"><h2>Set lab values</h2></span><br>
         <span>
         <form action="javascript:void(0);" onsubmit="goWithValues();">
           OpenShift Console:<input size="50" id="masterUrl" type="text" placeholder="OpenShift Console URL" style="margin-left: 10px"><br>
@@ -293,10 +299,23 @@ You will now be redirected to the <strong>GitLab</strong> login page.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Use the credentials <strong>user1</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.</p>
+<p>Use the credentials to login:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">user1</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Click Authorize to join Keycloak and GitLab.</p>
+<p>and the password:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">%ADMIN_PASSWORD%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Click <strong>Authorize</strong> to join Keycloak and GitLab.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -304,7 +323,7 @@ You will now be redirected to the <strong>GitLab</strong> login page.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>KeyCloak</strong> will redirect to the Developer Hub (RHDH) home screen.</p>
+<p>Now <strong>KeyCloak</strong> will redirect to the Developer Hub (RHDH) home screen.</p>
 </div>
 <div class="imageblock">
 <div class="content">

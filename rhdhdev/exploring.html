@@ -151,11 +151,24 @@ populated your Catalog a little, there are now other things to explore.</p>
 <div class="sect2">
 <h3 id="_login_to_gitlab"><a class="anchor" href="#_login_to_gitlab"></a>Login to GitLab</h3>
 <div class="paragraph">
-<p>Login in to GitLab using this link: <strong><a href="https://gitlab-gitlab.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">GitLab</a></strong></p>
+<p>Login in to GitLab using this link: <strong><a href="https://gitlab-gitlab.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">GitLab</a></strong>
+It is likely that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.</p>
 </div>
 <div class="paragraph">
-<p>Use the credentials <strong>user1</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.
-However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.</p>
+<p>If not, use the credentials to login:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">user1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the password:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">%ADMIN_PASSWORD%</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -232,11 +245,24 @@ with RHDH as a <strong>Template</strong> so that it appears in the Catalog corre
 <div class="sect2">
 <h3 id="_login_to_gitlab_2"><a class="anchor" href="#_login_to_gitlab_2"></a>Login to GitLab</h3>
 <div class="paragraph">
-<p>Login in to GitLab using this link: <strong><a href="https://gitlab-gitlab.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">GitLab</a></strong></p>
+<p>Login in to GitLab using this link: <strong><a href="https://gitlab-gitlab.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">GitLab</a></strong>
+It is likely that your previous login will provide SSO cookies to access GitLab without re-authenticating.</p>
 </div>
 <div class="paragraph">
-<p>Use the credentials <strong>user1</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.
-However, the likelihood is that your login to RHDH will provide SSO cookies to access GitLab without re-authenticating.</p>
+<p>If not, use the credentials to login:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">user1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the password:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">%ADMIN_PASSWORD%</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>On the <strong>GitLab</strong> home screen, you will be presented with the two template projects that are provisioned in this lab.</p>
@@ -328,7 +354,20 @@ can also login into the ArgCD application running on OpenShift to see the full s
 <p>Login in to ArgoCD using this link: <strong><a href="https://argocd-server-janus-argocd.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">ArgoCD</a></strong></p>
 </div>
 <div class="paragraph">
-<p>Use the credentials <strong>admin</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.</p>
+<p>Use the credentials to login:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">admin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the password:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">%ADMIN_PASSWORD%</code></pre>
+</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -358,8 +397,23 @@ software template such as project, pipelines and deployed applications.</p>
 <p>Login in to Developer Hub using this link: <strong><a href="https://console-openshift-console.%ROUTE_SUBDOMAIN%" class="params-link" target="_blank" rel="noopener">OpenShift Console</a></strong></p>
 </div>
 <div class="paragraph">
-<p>Use the credentials <strong>user1</strong> and the password <strong>%ADMIN_PASSWORD%</strong> to login.
-Sometimes the SSO credentials you have for GitLab will login you in by default as <strong>user1</strong> which is a non-privileged user.</p>
+<p>Use the credentials to login:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">user1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the password:</p>
+</div>
+<div class="listingblock copypaste">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">%ADMIN_PASSWORD%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sometimes the SSO credentials you have for GitLab will login you in by default as <strong>user1</strong> which is a non-privileged user.</p>
 </div>
 <div class="paragraph">
 <p>The OpenShift web console allows you to explore the deployment, pipelines and runtime environment with more visibility than
